@@ -1,9 +1,13 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React, { useState, useEffect } from "react";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+function App() {
+  // your component logic here
+
+  return (
+    <div>
+      {/* your JSX here */}
+    </div>
+  );
+}
+
+export default App;

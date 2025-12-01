@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.date-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.search-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: #6b46c1;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.search-btn:hover {
+  background: #553c9a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+}
+h1, h2 {
+  margin-bottom: 1rem;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+}
+h1, h2 {
+  margin-bottom: 1rem;
+}
+.room-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+}
+@media (max-width: 600px) {
+  .date-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
