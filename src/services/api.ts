@@ -7,3 +7,4 @@ export async function fetchRooms() {
   }
   return await response.json();
 }
+
