@@ -1,90 +1,35 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.button-row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.delete-btn {
+  padding: 8px 14px;
+  background: #e53e3e;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-.date-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-.search-btn {
-  padding: 0.6rem 1.2rem;
   border: none;
-  background: #6b46c1;
-  color: white;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
-}
-.search-btn:hover {
-  background: #553c9a;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-}
-h1, h2 {
-  margin-bottom: 1rem;
+.delete-btn:hover {
+  background: #c53030;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
+.edit-btn {
+  padding: 8px 14px;
+  background: #d69e2e;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
 }
-h1, h2 {
-  margin-bottom: 1rem;
-}
-.room-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background: #fafafa;
-}
-@media (max-width: 600px) {
-  .date-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+
+.select-btn {
+  padding: 8px 14px;
+  background: #2f855a;
+  color: white;
+  border-radius: 6px;
+  border: none;
 }

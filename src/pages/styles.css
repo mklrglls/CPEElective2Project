@@ -1,0 +1,14 @@
+.checkRoomBackground {
+  background-image: url('/images/background.jpg'); /* use your real image name here */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Remove this from your CSS */
+.checkRoomBackground {
+  background-image: url('/images/background.jpg'); /* remove this */
+  /* keep other styles */
+}
