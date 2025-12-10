@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 type Room = {
   id: number;
-  room_number: string;
+  name: string;
   capacity: number;
   doctors: string[];
 };
@@ -14,9 +14,9 @@ function RoomAvailability() {
   const [selectedRoom, setSelectedRoom] = useState<Room | null>(null);
 
   const rooms: Room[] = [
-    { id: 1, room_number: "Single Room", capacity: 1, doctors: ["Dr. Smith", "Dr. Lee"] },
-    { id: 2, room_number: "Double Room", capacity: 2, doctors: ["Dr. Johnson"] },
-    { id: 3, room_number: "Suite", capacity: 4, doctors: ["Dr. Patel", "Dr. Nguyen", "Dr. Brown"] },
+    { id: 1, name: "Single Room", capacity: 1, doctors: ["Dr. Smith", "Dr. Lee"] },
+    { id: 2, name: "Double Room", capacity: 2, doctors: ["Dr. Johnson"] },
+    { id: 3, name: "Suite", capacity: 4, doctors: ["Dr. Patel", "Dr. Nguyen", "Dr. Brown"] },
   ];
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function RoomAvailability() {
         {availableRooms.map((room) => (
           <li key={room.id}>
             <button onClick={() => handleSelectRoom(room)}>
-              {room.room_number} - Capacity: {room.capacity}
+              {room.name} - Capacity: {room.capacity}
             </button>
             <p>
               Assigned Doctors: {room.doctors.length > 0 ? room.doctors.join(", ") : "None"}
@@ -71,7 +71,7 @@ function RoomAvailability() {
       {selectedRoom && (
         <div>
           <h4>Selected Room:</h4>
-          <p>{selectedRoom.room_number}</p>
+          <p>{selectedRoom.name}</p>
           <p>
             Doctors: {selectedRoom.doctors.length > 0 ? selectedRoom.doctors.join(", ") : "None"}
           </p>
