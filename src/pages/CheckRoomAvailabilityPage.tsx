@@ -15,6 +15,7 @@ const BookingConfirmationPage = () => {
   );
 };
 
+
 const CheckRoomAvailabilityPage: React.FC = () => {
   // Login states
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -42,12 +43,15 @@ const CheckRoomAvailabilityPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  
   // On mount, load token from localStorage to persist login
   useEffect(() => {
     const token = localStorage.getItem("authToken");
     if (token) setIsLoggedIn(true);
   }, []);
 
+
+  
   // Login handler
   const handleLogin = async () => {
     setLoginError("");
@@ -493,6 +497,7 @@ const CheckRoomAvailabilityPage: React.FC = () => {
               position: "relative",
             }}
           >
+        
             <h3 style={{ marginBottom: 12, borderBottom: "1px solid #f8d7da", paddingBottom: 6 }}>
               Occupied Rooms
             </h3>
@@ -525,11 +530,35 @@ const CheckRoomAvailabilityPage: React.FC = () => {
                     }}
                   >
                     {room}
+                    
+                    <button
+                      onClick={async(e) => {
+                        e.stopPropagation(); // Prevent li click
+                        if (window.confirm(`Are you sure you want to remove room ${room}?`)) {
+                          setOccupiedRooms((prev) => prev.filter((r) => r !== room));
+                          await fetch (`http://localhost:4000/rooms/${room}/make-available`)
+                        }
+                      }}
+                      style={{
+                        marginLeft: 10,
+                        backgroundColor: "#dc3545",
+                        border: "none",
+                        borderRadius: 4,
+                        color: "white",
+                        padding: "4px 8px",
+                        cursor: "pointer",
+                        fontWeight: "bold",
+                      }}
+                      title={`Remove room ${room}`}
+                    >
+                      Remove
+                    </button>
                   </li>
+                  
                 ))}
               </ul>
             )}
-
+            
             {/* Tooltip for occupied rooms */}
             {hoveredRoom && (
               <div
