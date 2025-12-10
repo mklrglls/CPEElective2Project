@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AvailableRoomsPage from "./pages/AvailableRoomsPage";
 import BookingConfirmationPage from "./pages/BookingConfirmationPage";
 import CheckRoomAvailabilityPage from "./pages/CheckRoomAvailabilityPage";
 
@@ -11,11 +10,8 @@ function App() {
         {/* Default page */}
         <Route path="/" element={<CheckRoomAvailabilityPage />} />
 
-        {/* Rooms page */}
-        <Route path="/rooms" element={<AvailableRoomsPage />} />
-
-        {/* After selecting a room */}
-        <Route path="/booking-confirmation" element={<BookingConfirmationPage />} />
+        {/* After selecting a room - roomNumber is a URL param */}
+        <Route path="/booking-confirmation/:id" element={<BookingConfirmationPage />} />
       </Routes>
     </Router>
   );
